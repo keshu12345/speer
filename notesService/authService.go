@@ -13,6 +13,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// mockery --exported --dir=./ -name=AuthService --case underscore -output ../mocks/auth
 type AuthService interface {
 	SingUpUser(c *gin.Context) (model.User, error)
 	SingInUser(c *gin.Context) (string, error)

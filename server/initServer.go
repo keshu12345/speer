@@ -25,7 +25,6 @@ func InitializeServer(router *gin.Engine, cfg *config.Configuration, lifecycle f
 		OnStart: func(context context.Context) error {
 			logger.Info(fmt.Sprintf("Starting the REST application with %s environment and with port is %v", cfg.EnvironmentName, cfg.Server.RestServicePort))
 			go func() {
-				// service connections
 				if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 					logger.Fatalf("listen: %s\n", err)
 				}

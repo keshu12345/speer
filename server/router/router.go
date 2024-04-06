@@ -31,8 +31,7 @@ func NewGinRouter(config *config.Configuration) (*gin.Engine, error) {
 			AllowCredentials: true,
 			MaxAge:           1 * time.Hour,
 		},
-	
-	),
+		),
 	)
 	return g, nil
 }
